@@ -7,6 +7,8 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const CONVERSATION_API = import.meta.env.VITE_CONVERSATION_API;
+  const USER_API = import.meta.env.VITE_USER_API;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,7 +16,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/v1/auth/login",
+        `${USER_API}/auth/login`,
         { email, password },
         { withCredentials: true }
       );
