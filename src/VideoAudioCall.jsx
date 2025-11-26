@@ -2,7 +2,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import io from "socket.io-client";
 
-const SIGNALING_SERVER_URL = "http://localhost:5003"; // change if different
+
+  const CONVERSATION_API = import.meta.env.VITE_CONVERSATION_API;
+  const USER_API = import.meta.env.VITE_USER_API;
+const SIGNALING_SERVER_URL = import.meta.env.VITE_SIGNALING_SERVER_URL;
+
 
 export default function VideoAudioCall() {
   // Refs to persist across renders
