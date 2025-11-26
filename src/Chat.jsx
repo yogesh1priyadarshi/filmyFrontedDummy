@@ -18,13 +18,15 @@ export default function Chat() {
   const [editText, setEditText] = useState("");
 
   const CONVERSATION_API = import.meta.env.VITE_CONVERSATION_API;
+  const SIGNALING_SERVER_URL = import.meta.env.VITE_SIGNALING_SERVER_URL;
+
   const messagesEndRef = useRef(null);
   const mediaRecorderRef = useRef(null);
   const audioChunksRef = useRef([]);
 
   // ✅ Socket setup
   useEffect(() => {
-    const newSocket = io("http://localhost:5003");
+    const newSocket = io(SIGNALING_SERVER_URL);
     setSocket(newSocket);
     newSocket.emit("join", senderId);
 
