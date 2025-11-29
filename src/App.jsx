@@ -4,6 +4,7 @@ import Chat from "./Chat";
 import List from "./List";
 import ChatPage from "./ChatPage";
 import VideoAudioCall from "./VideoAudioCall";
+import AudioCall from "./AudioCall";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Route path="/group" element={<ChatPage />} />
       <Route path="/chat/:id" element={<Chat />} />
       <Route path="/videoCall" element={<VideoAudioCall />} />
+      <Route path="/audioCall" element={<AudioCall />} />
     </Routes>
   );
 }
